@@ -66,9 +66,22 @@
                                             <action selector="goBack:" destination="tqV-EV-La8" eventType="touchUpInside" id="IUn-z2-scp"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-KB-H6N">
+                                        <rect key="frame" x="319" y="19" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8fG-5v-PcG"/>
+                                            <constraint firstAttribute="width" constant="40" id="i8e-Gx-BES"/>
+                                        </constraints>
+                                        <state key="normal" image="checkicon"/>
+                                        <connections>
+                                            <action selector="uploadImage:" destination="tqV-EV-La8" eventType="touchUpInside" id="f7A-KE-TDq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qY2-KB-H6N" secondAttribute="trailing" constant="16" id="A3P-gR-JxZ"/>
+                                    <constraint firstItem="qY2-KB-H6N" firstAttribute="top" secondItem="IzS-Qq-3Uw" secondAttribute="top" constant="19" id="FnO-ho-5dX"/>
                                     <constraint firstItem="pVM-YF-Zrg" firstAttribute="leading" secondItem="IzS-Qq-3Uw" secondAttribute="leading" constant="8" id="J1X-xh-ohf"/>
                                     <constraint firstItem="pVM-YF-Zrg" firstAttribute="top" secondItem="IzS-Qq-3Uw" secondAttribute="top" constant="15" id="xq8-MC-Pqu"/>
                                     <constraint firstAttribute="height" constant="69" id="ylV-j0-8k5"/>
@@ -115,5 +128,6 @@
     </scenes>
     <resources>
         <image name="back_btn" width="13" height="21"/>
+        <image name="checkicon" width="16" height="13"/>
     </resources>
 </document>
