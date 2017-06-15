@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6rE-e2-wrG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InsuranceCardDetector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,100 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FXX-Q4-478">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="B69-UA-7Gd">
+                            <connections>
+                                <action selector="takePhoto:" destination="BYZ-38-t0r" id="3Au-OU-0P6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1018" y="158"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="B5K-Gt-aBM">
+            <objects>
+                <viewController storyboardIdentifier="PhotoVC" id="tqV-EV-La8" customClass="PhotoViewController" customModule="InsuranceCardDetector" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EWG-hm-y32"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hfa-ew-UNm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rqw-Ii-c2R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e3o-ke-pi1">
+                                <rect key="frame" x="0.0" y="69" width="375" height="598"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzS-Qq-3Uw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVM-YF-Zrg">
+                                        <rect key="frame" x="8" y="15" width="65" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="GUD-zd-Ky0"/>
+                                            <constraint firstAttribute="height" constant="30" id="rA1-2M-ehU"/>
+                                        </constraints>
+                                        <state key="normal" title="Back" image="back_btn">
+                                            <color key="titleColor" red="0.51764705879999995" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goBack:" destination="tqV-EV-La8" eventType="touchUpInside" id="IUn-z2-scp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pVM-YF-Zrg" firstAttribute="leading" secondItem="IzS-Qq-3Uw" secondAttribute="leading" constant="8" id="J1X-xh-ohf"/>
+                                    <constraint firstItem="pVM-YF-Zrg" firstAttribute="top" secondItem="IzS-Qq-3Uw" secondAttribute="top" constant="15" id="xq8-MC-Pqu"/>
+                                    <constraint firstAttribute="height" constant="69" id="ylV-j0-8k5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e3o-ke-pi1" firstAttribute="top" secondItem="IzS-Qq-3Uw" secondAttribute="bottom" id="0G7-Pk-zFI"/>
+                            <constraint firstItem="e3o-ke-pi1" firstAttribute="leading" secondItem="rqw-Ii-c2R" secondAttribute="leading" id="K3J-Wz-eR2"/>
+                            <constraint firstItem="IzS-Qq-3Uw" firstAttribute="leading" secondItem="e3o-ke-pi1" secondAttribute="leading" id="Xgy-au-ftd"/>
+                            <constraint firstItem="IzS-Qq-3Uw" firstAttribute="top" secondItem="rqw-Ii-c2R" secondAttribute="top" id="jf8-bt-Dqa"/>
+                            <constraint firstItem="IzS-Qq-3Uw" firstAttribute="trailing" secondItem="e3o-ke-pi1" secondAttribute="trailing" id="kfr-gr-rQc"/>
+                            <constraint firstItem="Hfa-ew-UNm" firstAttribute="top" secondItem="e3o-ke-pi1" secondAttribute="bottom" id="txo-Yh-rIr"/>
+                            <constraint firstAttribute="trailing" secondItem="e3o-ke-pi1" secondAttribute="trailing" id="y5M-eX-tHJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="e3o-ke-pi1" id="3vi-lF-iwb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ErI-uF-9AE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1744.8" y="157.87106446776613"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="csb-dH-rxK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6rE-e2-wrG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zTf-nY-lMD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YWJ-IE-Sy6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wr-ef-RDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136" y="491.15442278860576"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back_btn" width="13" height="21"/>
+    </resources>
 </document>
